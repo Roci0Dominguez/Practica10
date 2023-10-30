@@ -1,31 +1,34 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33927.289
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Suma Recursiva e Iterativa", "Suma Recursiva e Iterativa\Suma Recursiva e Iterativa.vcxproj", "{0DD9F560-5BC7-4D80-BAD9-79CB7D31616E}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0DD9F560-5BC7-4D80-BAD9-79CB7D31616E}.Debug|x64.ActiveCfg = Debug|x64
-		{0DD9F560-5BC7-4D80-BAD9-79CB7D31616E}.Debug|x64.Build.0 = Debug|x64
-		{0DD9F560-5BC7-4D80-BAD9-79CB7D31616E}.Debug|x86.ActiveCfg = Debug|Win32
-		{0DD9F560-5BC7-4D80-BAD9-79CB7D31616E}.Debug|x86.Build.0 = Debug|Win32
-		{0DD9F560-5BC7-4D80-BAD9-79CB7D31616E}.Release|x64.ActiveCfg = Release|x64
-		{0DD9F560-5BC7-4D80-BAD9-79CB7D31616E}.Release|x64.Build.0 = Release|x64
-		{0DD9F560-5BC7-4D80-BAD9-79CB7D31616E}.Release|x86.ActiveCfg = Release|Win32
-		{0DD9F560-5BC7-4D80-BAD9-79CB7D31616E}.Release|x86.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F073B9D2-18B9-4E4B-AB5D-51090A672844}
-	EndGlobalSection
-EndGlobal
+//yareli del rocio perez dominguez 
+#include <iostream>
+
+int sumaIterativa(int n) {//solucion iterativa
+    int suma = 0;
+    
+    while (n > 9) {
+        suma += n % 10;
+        n /= 10;
+    }
+    return (suma + n);
+}
+//So lucionrEcursiva
+         int sumaRecursiva(int n) {
+        
+    if (n <= 9) {
+            return n;
+     }else{
+         return sumaRecursiva (n / 10) + n % 10;
+     } 
+ }int main(){
+ 
+                   int n; 
+          std::cout << "Dame n: ";
+          std::cin >> n; 
+
+    
+                   int resultadoIterativa = sumaIterativa(n);
+                   int resultadoRecursiva = sumaRecursiva(n);
+                   
+    std::cout << "La sumaIterativa es: " << resultadoIterativa <<std::endl;
+    std::cout << "La sumaRecursiva es: " << resultadoRecursiva <<std::endl;
+    
+return 0; }
